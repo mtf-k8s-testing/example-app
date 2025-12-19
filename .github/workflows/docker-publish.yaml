@@ -60,7 +60,6 @@ jobs:
             type=semver,pattern=v{{major}} # also do v2
             type=semver,pattern=v{{major}}.{{minor}} # also do v2.0
 
-      # It uses the `context` parameter to define the build's context
       - name: Build and push Docker image
         id: push
         uses: docker/build-push-action@v6
