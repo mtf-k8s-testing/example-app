@@ -108,6 +108,10 @@ app.get('/', (req, res) => {
 app.get('/500', (req, res) => {
     return handleRequest(true, req, res);
 })
+app.get('/hang', (req, res) => {
+    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
+    return sleep(5*60*1000).then(() => handleRequest(true, req, res));
+})
 
 app.listen(port, () => {
     console.log("Example app listening on port " + port);
