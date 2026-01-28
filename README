@@ -4,7 +4,7 @@ Runs a webserver on port PORT or 3000, and a telegraf metrics endpoint on METRIC
 
 
 docker build -t example-docker-image:test .
-docker run -p 3000:3000 -p9797:9797 --name foo example-docker-image:test
+docker run --rm -p 3000:3000 -p9797:9797 --name foo example-docker-image:test
 curl localhost:3000
 curl localhost:9797
 docker rm -f foo
